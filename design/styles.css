@@ -1,0 +1,417 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+/* CSS untuk membuat video responsif dan lebih kecil */
+.video-container {
+    position: relative;
+    padding-bottom: 40%; /* Rasio yang lebih kecil */
+    height: 0;
+    overflow: hidden;
+    max-width: 80%; /* Mengurangi lebar video */
+    margin: 0 auto; /* Pusatkan video */
+    background: #000;
+    border-radius: 8px; /* Membuat sudut video melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek elegan */
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Agar video mengikuti bentuk container */
+}
+
+/* Container untuk filter */
+.filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Gaya untuk input filter */
+.filter-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filter-input:focus {
+    border-color: #6200ea;
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
+}
+
+
+header {
+    /* background-color: #333; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    color: #fff;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    color: #000; /* Ganti warna teks menjadi hitam untuk kontras dengan latar belakang putih */
+    position: fixed; /* Menjadikan navbar fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Menetapkan z-index */
+    background-color: #fff; /* Menjadikan latar belakang navbar putih */
+    border-bottom: 1px solid black;
+}
+
+.logo img {
+    height: 50px;
+}
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #ff6347;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: red;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    background: #ff6347;
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    background: #ff6347;
+}
+
+/* Style untuk spanduk */
+.banner {
+    background: url('img/banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+.banner h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: black;
+}
+.banner p {
+    font-size: 1.2em;
+    color: black;
+}
+.banner .cta-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.banner .cta-button:hover {
+    background-color: #e67e22;
+}
+
+
+/* about us */
+/* About Us Section */
+.about-us {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    max-height: 400px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.about-content h2 {
+    color: #ff3e6c;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-content h3 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.advice-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.advice-box p {
+    margin: 5px 0;
+}
+
+.advice-box a {
+    color: #ff3e6c;
+    text-decoration: none;
+}
+
+.advice-box a:hover {
+    text-decoration: underline;
+}
+
+
+/* card */
+/* Cards Section */
+.cards-section {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.cards-section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3e6c;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #e1355b;
+}
+
+
+/* Footer Styles */
+.footer {
+    margin-top: 1rem;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .created-by {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transform: translateX(100%);
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .nav-links li a {
+        color: white;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* about us */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+

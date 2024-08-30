@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Portofolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portofolio.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Anda">
+            </div>
+            <ul class="nav-links" id="navLinks" style="z-index: 10;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portofolio.html">Portofolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="container-max">
+            <div class="content-max">
+                <h2 class="heading">Daftar Portofolio</h2>
+                <section class="portfolio-filter">
+                    <h3>Filter Kategori Portofolio</h3>
+                    <ul>
+                        <li><a href="#" data-category="all">Semua</a></li>
+                        <li><a href="#" data-category="web-design">Web Design</a></li>
+                        <li><a href="#" data-category="development">Development</a></li>
+                        <li><a href="#" data-category="branding">Branding</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="main-content">
+                <div class="portfolio-list">
+                    <div class="grid-container">
+                        <article class="portfolio-item" data-category="web-design">
+                            <img src="img/images (1).jpeg" height="200" alt="Project Image" class="portfolio-img">
+                            <div class="group">
+                                <h3 class="title">
+                                    <a href="#" class="open-modal" data-id="1">Web Design Project 1</a>
+                                </h3>
+                                <p class="description">Deskripsi singkat tentang proyek ini.</p>
+                            </div>
+                            <div class="author">
+                                <p class="author-name">Oleh: Fadhil Rabbani</p>
+                                <time datetime="2024-08-29" class="date">Aug 29, 2024</time>
+                            </div>
+                            <div class="post-meta">
+                                <span class="views">1.5K views</span>
+                                <span class="comments">20 comments</span>
+                            </div>
+                        </article>
+                        <article class="portfolio-item" data-category="web-design">
+                            <img src="img/images (2).jpg" height="200" alt="Project Image" class="portfolio-img">
+                            <div class="group">
+                                <h3 class="title">
+                                    <a href="#" class="open-modal" data-id="1">Web Design Project 1</a>
+                                </h3>
+                                <p class="description">Deskripsi singkat tentang proyek ini.</p>
+                            </div>
+                            <div class="author">
+                                <p class="author-name">Oleh: Fadhil Rabbani</p>
+                                <time datetime="2024-08-29" class="date">Aug 29, 2024</time>
+                            </div>
+                            <div class="post-meta">
+                                <span class="views">1.5K views</span>
+                                <span class="comments">20 comments</span>
+                            </div>
+                        </article>
+                        <article class="portfolio-item" data-category="web-design">
+                            <img src="img/images (4).jpg" height="200" alt="Project Image" class="portfolio-img">
+                            <div class="group">
+                                <h3 class="title">
+                                    <a href="#" class="open-modal" data-id="1">Web Design Project 1</a>
+                                </h3>
+                                <p class="description">Deskripsi singkat tentang proyek ini.</p>
+                            </div>
+                            <div class="author">
+                                <p class="author-name">Oleh: Fadhil Rabbani</p>
+                                <time datetime="2024-08-29" class="date">Aug 29, 2024</time>
+                            </div>
+                            <div class="post-meta">
+                                <span class="views">1.5K views</span>
+                                <span class="comments">20 comments</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Detail Proyek</h2>
+            <img id="modalImage" src="" alt="Detail Image" class="modal-img">
+            <p id="modalDescription">Deskripsi lengkap proyek ini...</p>
+            <p id="modalAuthor">Oleh: Fadhil Rabbani</p>
+            <time id="modalDate" datetime="2024-08-29">Aug 29, 2024</time>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="created-by">Created by <strong>Fadhil Rabbani</strong></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                    <img src="img/icons/linkedin.png" alt="Pinterest">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                    <img src="img/icons/fb.png" alt="Pinterest">
+                </a>
+                <a href="https://www.pinterest.com/" target="_blank" aria-label="Pinterest">
+                    <img src="img/icons/pinterest.png" alt="Pinterest">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        const modal = document.getElementById("portfolioModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalImage = document.getElementById("modalImage");
+        const modalDescription = document.getElementById("modalDescription");
+        const modalAuthor = document.getElementById("modalAuthor");
+        const modalDate = document.getElementById("modalDate");
+        const span = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.open-modal').forEach(item => {
+            item.addEventListener('click', event => {
+                const projectId = event.target.getAttribute('data-id');
+
+                modalTitle.textContent = "Detail Proyek " + projectId;
+                modalImage.src = "img/images (2).jpg";
+                modalDescription.textContent = "Deskripsi lengkap tentang proyek " + projectId + "...";
+                modalAuthor.textContent = "Oleh: Fadhil Rabbani";
+                modalDate.textContent = "Aug 29, 2024";
+
+                modal.style.display = "block";
+            });
+        });
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
