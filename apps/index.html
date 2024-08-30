@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGN - Web Application</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        #drawingCanvas {
+            border: 1px solid black;
+            background-color: white;
+            display: block;
+            margin: 10px auto;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+        .controls button {
+            margin: 0 5px;
+        }
+        .app-container, .welcome-screen {
+            display: none;
+        }
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-screen">
+        <div class="logo">DSGN</div>
+    </div>
+
+    <div class="app-container">
+        <header class="toolbar">
+            <div class="toolbar-item">
+                <button id="undo">Undo (0)</button>
+                <button id="redo">Redo (0)</button>
+            </div>
+            <div class="toolbar-item zoom-controls">
+                <button id="zoom-in">+</button>
+                <button id="zoom-out">-</button>
+                <span id="zoom-percent">100%</span>
+            </div>
+        </header>
+
+        <div class="workspace">
+            <aside class="tools-panel">
+                <button id="brush-tool">Brush</button>
+                <button id="eraser-tool">Eraser</button>
+                <button id="move-tool">Move</button>
+                <button id="shape-tool">Shapes</button>
+                <button id="color-picker">Color Picker</button>
+                <button id="paint-bucket">Paint Bucket</button>
+                <button id="text-tool">Text</button>
+                <button id="clone-stamp">Clone Stamp</button>
+                <button id="selection-tool">Select</button>
+                <button id="import-image">Import Image</button>
+                <button id="export-image">Export to JPG</button>
+            </aside>
+
+            <main class="canvas-area">
+                <canvas id="drawingCanvas" width="1280" height="600"></canvas>
+            </main>
+
+            <aside class="layers-panel">
+                <h2>Layers</h2>
+                <ul id="layerList">
+                    <!-- Layer List -->
+                </ul>
+            </aside>
+        </div>
+
+        <footer class="properties-bar">
+            <h2>Properties</h2>
+            <!-- Properties for selected tool -->
+        </footer>
+    </div>
+
+    <input type="file" id="file-input" style="display: none;" accept="image/*">
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
